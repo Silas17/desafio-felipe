@@ -1,20 +1,27 @@
 let nome = "player1";
 let vitorias = 123;
-let derrotas = 45;
-let xpVitoria = 320;
-let xpDerrota = 120;
+let derrotas = 500;
+let xpVitoria = 80;
+let xpDerrota = 30;
 let arreyLevels = ['Ferro', 'Bronze', 'Prata', 'Ouro', 'Platina', 'Ascendente', 'Imortal', 'Radiante'];
 
 if (vitorias === 0) {
   console.log("O jogador não possui vitórias.");
 } else{
 
+
   let xpLevel = vitorias * xpVitoria - derrotas * xpDerrota;
+  let partidas = vitorias + derrotas;
 
-  let menssagem = `O jogador ${nome} possui ${xpLevel} pontos de experiência e um total de ${vitorias} vitorias e é da categoria:`;
+if (xpLevel < 0) {
+  xpLevel = 0;  
+}
+let menssagem = `O jogador ${nome} possui ${xpLevel} pontos de experiência e um total de ${partidas} partidas e é da categoria:`;
 
+// Nao tenho ideia pra por um (for) aqui, entao usei um switch mesmo
+  
   switch (true) {
-    case xpLevel >= 1 && xpLevel <= 1000:
+    case xpLevel >= 0 && xpLevel <= 1000:
       console.log(menssagem + ` ${arreyLevels[0]}`);
       break;
     case xpLevel >= 1001 && xpLevel <= 2000:
@@ -40,7 +47,4 @@ if (vitorias === 0) {
       break;
   }
 
-
-
 }
-
