@@ -1,9 +1,17 @@
 
-let ranking = player("player1", 123, 20);
+let vitorias = 123;
+let derrotas = 500;
 
-function player(nome, victory, defeat) {
-    let namePlayer = nome;
-    let wins = victory - defeat;
-    return namePlayer, wins;
+numeberVitorias = calculateVictories(vitorias, derrotas);
+
+function calculateVictories(vitorias, derrotas) {
+    let calular = vitorias - derrotas;
+    if (calular < 0) {
+        console.log("O jogador não possui vitórias.");
+        return 0;
+    } else {
+        return calular;
+    }
 }
-console.log(ranking);
+
+console.log("Número de vitórias calculadas: " + numeberVitorias);
