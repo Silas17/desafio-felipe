@@ -1,6 +1,6 @@
 
 let vitorias = 123;
-let derrotas = 500;
+let derrotas = 40;
 let rankins = ['Ferro', 'Bronze', 'Prata', 'Ouro', 'Diamante', 'Lendario', 'Imortal'];
 
 numeberVitorias = calculateVictories(vitorias, derrotas);
